@@ -1,80 +1,107 @@
-import { ChatWindow } from "@/components/ChatWindow";
+'use client'
 
-export default function Home() {
-  const InfoCard = (
-    <div className="p-4 md:p-8 rounded bg-[#25252d] w-full max-h-[85%] overflow-hidden">
-      <h1 className="text-3xl md:text-4xl mb-4">
-        ▲ Next.js + LangChain.js 🦜🔗
-      </h1>
-      <ul>
-        <li className="text-l">
-          🤝
-          <span className="ml-2">
-            This template showcases a simple chatbot using{" "}
-            <a href="https://js.langchain.com/" target="_blank">
-              LangChain.js
-            </a>{" "}
-            and the Vercel{" "}
-            <a href="https://sdk.vercel.ai/docs" target="_blank">
-              AI SDK
-            </a>{" "}
-            in a{" "}
-            <a href="https://nextjs.org/" target="_blank">
-              Next.js
-            </a>{" "}
-            project.
-          </span>
-        </li>
-        <li className="hidden text-l md:block">
-          💻
-          <span className="ml-2">
-            You can find the prompt and model logic for this use-case in{" "}
-            <code>app/api/chat/route.ts</code>.
-          </span>
-        </li>
-        <li>
-          🏴‍☠️
-          <span className="ml-2">
-            By default, the bot is pretending to be a pirate, but you can change
-            the prompt to whatever you want!
-          </span>
-        </li>
-        <li className="hidden text-l md:block">
-          🎨
-          <span className="ml-2">
-            The main frontend logic is found in <code>app/page.tsx</code>.
-          </span>
-        </li>
-        <li className="text-l">
-          🐙
-          <span className="ml-2">
-            This template is open source - you can see the source code and
-            deploy your own version{" "}
-            <a
-              href="https://github.com/langchain-ai/langchain-nextjs-template"
-              target="_blank"
-            >
-              from the GitHub repo
-            </a>
-            !
-          </span>
-        </li>
-        <li className="text-l">
-          👇
-          <span className="ml-2">
-            Try asking e.g. <code>What is it like to be a pirate?</code> below!
-          </span>
-        </li>
-      </ul>
-    </div>
-  );
+import React from 'react'
+import { Wrench, Phone, Star, Clock } from 'lucide-react'
+
+export default function Homepage() {
   return (
-    <ChatWindow
-      endpoint="api/chat"
-      emoji="🏴‍☠️"
-      titleText="Patchy the Chatty Pirate"
-      placeholder="I'm an LLM pretending to be a pirate! Ask me about the pirate life!"
-      emptyStateComponent={InfoCard}
-    ></ChatWindow>
-  );
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <Wrench size={48} />
+            <h1 className="text-4xl font-bold">Expert Plumbing Services</h1>
+            <p className="text-xl max-w-2xl">
+              Professional, reliable, and efficient plumbing solutions for your home and business.
+            </p>
+            <button className="bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-lg font-semibold flex items-center">
+              Schedule Online <Clock size={20} className="ml-2" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {['Repair', 'Installation', 'Maintenance'].map((service) => (
+              <div key={service} className="bg-white shadow-md rounded-lg">
+                <div className="p-6 text-center">
+                  <Wrench className="mx-auto mb-4" size={32} />
+                  <h3 className="text-xl font-semibold mb-2">{service}</h3>
+                  <p>Professional {service.toLowerCase()} services for all your plumbing needs.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-20 bg-secondary text-secondary-foreground">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">Customer Reviews</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { name: 'John D.', text: 'Excellent service! Fixed our leak quickly and efficiently.' },
+              { name: 'Sarah M.', text: 'Very professional and knowledgeable. Highly recommend!' },
+            ].map((review, index) => (
+              <div key={index} className="bg-white text-foreground shadow-md rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400 mr-2" size={20} />
+                  ))}
+                </div>
+                <p className="mb-2">"{review.text}"</p>
+                <p className="font-semibold">- {review.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-6">
+            <h2 className="text-3xl font-bold">Ready to Solve Your Plumbing Issues?</h2>
+            <p className="text-xl max-w-2xl mx-auto">
+              Our team of expert plumbers is just a call away. Get in touch for fast and reliable service.
+            </p>
+            <div className="flex justify-center space-x-4">
+              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg text-lg font-semibold flex items-center">
+                Call Now <Phone size={20} className="ml-2" />
+              </button>
+              <button className="bg-secondary text-secondary-foreground px-6 py-3 rounded-lg text-lg font-semibold flex items-center">
+                Schedule Online <Clock size={20} className="ml-2" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 bg-background border-t">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-4 md:mb-0">
+              <Wrench size={24} className="mr-2" />
+              <p className="text-xl font-semibold">Expert Plumbing</p>
+            </div>
+            <nav className="flex space-x-4">
+              <a href="#" className="text-foreground">Services</a>
+              <a href="#" className="text-foreground">About</a>
+              <a href="#" className="text-foreground">Contact</a>
+            </nav>
+          </div>
+          <p className="text-center mt-6 text-sm text-gray-500">
+            © {new Date().getFullYear()} Expert Plumbing. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
 }
