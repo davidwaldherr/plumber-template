@@ -119,3 +119,7 @@ div.bg-color-5 {
   color: white;
   opacity: 1; /* Override any browser default opacity */
 }
+
+.no-outline:focus {
+  outline: none;
+}

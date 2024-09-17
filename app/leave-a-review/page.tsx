@@ -23,7 +23,10 @@ export default function ReviewPage() {
   const handleRatingClick = (rating: number) => {
     setSelectedRating(rating)
     if (rating === 5) {
-      window.location.href = "https://www.google.com/localservices/prolist?g2lbs=AOHF13mpGp5jWiC8KDG_p8rC-GBYDxcVIRcEo68c09Evf3bIUJcriBLAo0J_oNLizu4hcBaPM0KPYhbXHMPdmv6Iz9qw_oShlg%3D%3D&hl=en-US&gl=us&cs=1&ssta=1&src=1&gsas=1&slp=OvwDQ2hNSWlOTG4xLUhJaUFNVjZ6TUlCUjJLWVF1WEVpTUlCQkFCR2d3SXBZcnlpZ1VRLW9hNjZCZ2cwTzdaR1REOHI1UWZPS2ozN0F4SUFCSW1DQVFRQWhvTUNJcmhoWmdERVBUanRkZ0pJTS1zc0NFd25lZl9JVGlubHRnUVNNN3pfeEFTSWdnRUVBTWFDd2otaE5wX0VPeVQ5S3dKSVBHUWt5QXduNG1nSURpNHlJa1FTQUFTSXdnRUVBUWFEQWplc2RlR0FSQzgtLWV0Q1NEM2gtRWhNSjNuX3lFNC04UHdFRWdBRWlZSUJCQUZHZ3dJaTRmdHBRSVFyYmJKdlFrZzJQZXlJRENkNV84aE9PeTdtUkJJenZQX0VCSWpDQVFRQmhvTUNLXzBnSnNFRUpDWTJQTUpJT0wyM0NFd25lZl9JVGl4dS00UVNBQVNKZ2dFRUFjYURBakVpcDZWQkJDdjVNenVDU0NYcDRjaE1KM25feUU0eTlQREVFak84XzhRRWlNSUJCQUlHZ3dJN2ZQWjhBVVF3SzM1eUJZZ2xQSDZJVENkNV84aE9NcTRfUkJJQUNJR0NBUVFBeGdJS0F3eUxObklzUUxXeUxFQzFiS3hBdFd5c1FMVnNyRUMxYkt4QXJLcHNRS1hxN0VDeGFDeEFwdWZzUUxHb0xFQw%3D%3D&spp=ElcKEgiK4YWYAxD047XYCRj_x6-gJRIoeGNhdDpzZXJ2aWNlX2FyZWFfYnVzaW5lc3NfcGx1bWJlcjplbi1VU0ITCIjS59fhyIgDFeszCAUdimELl0gEUAI%3D&scp=Cih4Y2F0OnNlcnZpY2VfYXJlYV9idXNpbmVzc19wbHVtYmVyOmVuLVVTEiMaEgm9Ja_AvWZkiBEOk1YyegBYACIJTmFzaHZpbGxlOKPQPioIUGx1bWJpbmdKFQoTCIjS59fhyIgDFeszCAUdimELlw%3D%3D&q=plumber%20nashville%20google&ved=2ahUKEwiC2-DX4ciIAxXuhYkEHX7dDIgQlZUCegQICRAY"
+      window.open(
+        "https://www.google.com/localservices/prolist?g2lbs=AOHF13mpGp5jWiC8KDG_p8rC-GBYDxcVIRcEo68c09Evf3bIUJcriBLAo0J_oNLizu4hcBaPM0KPYhbXHMPdmv6Iz9qw_oShlg%3D%3D&hl=en-US&gl=us&cs=1&ssta=1&src=1&gsas=1&slp=OvwDQ2hNSWlOTG4x-LU...-UkJJQUNJR0NBUVFBeGdJS0F3eUxObklzUUxXeUxFQzFiS3hBdFd5c1FMVnNyRUMxYkt4QXJLcHNRS1hxN0VDeGFDeEFwdWZzUUxHb0xFQw%3D%3D&spp=ElcKEgiK4YWYAxD047XYCRj_x6-gJRIoeGNhdDpzZXJ2aWNlX2FyZWFfYnVzaW5lc3NfcGx1bWJlcjplbi1VU0ITCIjS59fhyIgDFeszCAUdimELl0gEUAI%3D&scp=Cih4Y2F0OnNlcnZpY2VfYXJlYV9idXNpbmVzc19wbHVtYmVyOmVuLVVSEiMaEgm9Ja_AvWZkiBEOk1YyegBYACIJTmFzaHZpbGxlOKPQPioIUGx1bWJpbmdKFQoTCIjS59fhyIgDFeszCAUdimELlw%3D%3D&q=plumber%20nashville%20google&ved=2ahUKEwiC2-DX4ciIAxXuhYkEHX7dDIgQlZUCegQICRAY",
+        "_blank"
+      );
     } else {
       setShowFeedbackForm(true)
     }
@@ -45,7 +48,7 @@ export default function ReviewPage() {
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
-              <CheckCircle className="w-24 h-24 text-green-500 mx-auto mb-6" />
+              <CheckCircle className="w-24 h-24 text-[rgb(var(--color-5))] mx-auto mb-6" />
             </motion.div>
             <h2 className="text-3xl font-bold mb-4">Thank You for Your Feedback!</h2>
             <p className="text-xl text-default-500">
@@ -72,8 +75,8 @@ export default function ReviewPage() {
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4">
       <Card className="w-full max-w-2xl shadow-2xl border-4 border-white rounded-lg">
         <CardHeader className={`flex flex-col items-center gap-4 p-8 ${showFeedbackForm ? "hidden" : ""}`}>
-          <h1 className="text-4xl md:text-6xl font-bold text-center">Rate Your Experience</h1>
-          <p className="text-xl md:text-3xl text-center text-default-500">
+          <h1 className="text-7xl md:text-6xl font-bold text-center">Rate Your Experience</h1>
+          <p className="text-3xl md:text-3xl text-center text-default-500">
             How would you rate our plumbing service?
           </p>
         </CardHeader>
@@ -113,55 +116,57 @@ export default function ReviewPage() {
           ) : (
             <form onSubmit={handleFeedbackSubmit} className="space-y-8">
               <div>
-                <h1 className="text-3xl font-semibold mb-3">We Would Love to Hear More!</h1>
-                <p className="text-lg text-default-500 mb-6">
+                <h1 className="text-6xl font-semibold mb-3 text-center pb-2">We Would Love to Hear More!</h1>
+                <p className="text-2xl text-default-500 mb-6 text-center">
                   Your feedback is incredibly valuable to us. Please let us know how we can improve our service!
                 </p>
               </div>
               <div className="space-y-3">
-                <label htmlFor="what-went-wrong" className="block text-lg font-medium text-default-700">
-                  Did anything go wrong?
+                <label htmlFor="what-went-wrong" className="block text-2xl font-medium text-default-700">
+                  <strong>Did anything go wrong?</strong><span className="text-red-500">*</span>
                 </label>
-                <Input
-                  id="what-went-wrong"
+                <Textarea
                   placeholder="Please provide details about the issue"
                   required
                   size="lg"
+                  className="border-2 border-[rgb(var(--color-1))] ml-0 pl-0 no-outline resize"
                   classNames={{
-                    input: "text-white",
+                    input: "text-white ml-0 pl-0 no-outline",
                   }}
                 />
               </div>
               <div className="space-y-3">
-                <label htmlFor="how-to-improve" className="block text-lg font-medium text-default-700">
-                  How can we improve?
+                <label htmlFor="how-to-improve" className="block text-2xl font-medium text-default-700">
+                  <strong>How can we improve?</strong><span className="text-red-500">*</span>
                 </label>
                 <Textarea
                   id="how-to-improve"
                   placeholder="Your suggestions for improvement"
                   required
                   size="lg"
+                  className="border-2 border-[rgb(var(--color-1))] ml-0 pl-0 no-outline"
                   classNames={{
-                    input: "text-white",
+                    input: "text-white ml-0 pl-0 no-outline",
                   }}
                 />
               </div>
               <div className="space-y-3">
-                <label htmlFor="contact-info" className="block text-lg font-medium text-default-700">
-                  Your contact information
+                <label htmlFor="contact-info" className="block text-2xl font-medium text-default-700">
+                  <strong>Your contact information</strong>
                 </label>
                 <Input
                   id="contact-info"
                   placeholder="Email or phone number"
                   size="lg"
+                  className="border-2 border-[rgb(var(--color-1))] ml-0 pl-0 no-outline"
                   classNames={{
-                    input: "text-white",
+                    input: "text-white ml-0 pl-0 no-outline",
                   }}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground px-8 py-4 rounded-full text-xl font-semibold flex items-center justify-center transition-all duration-200 hover:bg-primary-dark"
+                className="w-full bg-[rgb(var(--color-3))] text-primary-foreground px-8 py-4 rounded-full text-xl font-semibold flex items-center justify-center transition-all duration-200 hover:bg-[rgb(var(--color-3))]"
               >
                 Submit Feedback
                 <Send size={24} className="ml-3" />

@@ -4,6 +4,7 @@ import { Public_Sans } from "next/font/google";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/footer";
+import { GoogleReviewsCard } from "@/components/HomePage/GoogleReviewsCard";
 
 const publicSans = Public_Sans({ subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Plumbing Template</title>
+        <title>Plumber Pipeline</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <meta
           name="description"
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">
           {children}
+          <GoogleReviewsCard />
         </main>
         <Footer />
       </body>

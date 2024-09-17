@@ -37,6 +37,7 @@ export function Footer() {
               <Link href="/about" className="text-xl text-foreground hover:text-accent mb-4">About Us</Link>
               <Link href="/contact" className="text-xl text-foreground hover:text-accent mb-4">Contact</Link>
               <Link href="/reviews" className="text-xl text-foreground hover:text-accent mb-4">Reviews</Link>
+              <Link href="/leave-a-review" className="text-xl text-foreground hover:text-accent mb-4">Leave a Review</Link>
             </div>
           </div>
           
