@@ -23,7 +23,7 @@ interface Review {
 }
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <Card className="w-full h-full shadow-md hover:shadow-xl transition-shadow duration-300 bg-secondary text-secondary-foreground">
+  <Card className="w-full h-full shadow-md hover:shadow-xl transition-shadow duration-300 bg-color-1 text-secondary-foreground hover:bg-color-3 hover:text-color-1">
     <CardHeader className="flex gap-3">
       <Avatar src={review.avatar} size="md" />
       <div className="flex flex-col">
