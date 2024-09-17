@@ -34,9 +34,9 @@ export default function GoogleMapsSection() {
       <div className="container mx-auto px-4">
         <h2 className="text-7xl font-bold text-center mb-10 text-[rgb(var(--color-5))]">Find Us</h2>
         <div className="w-full h-[400px] border-4 border-[rgb(var(--color-3))]">
-          <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+          <APIProvider apiKey={process.env.GOOGLE_MAPS_API_KEY!}>
             <Map
-              mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_ID!}
+              mapId={process.env.GOOGLE_MAPS_ID!}
               center={{ lat: 43.596478, lng: -88.0883928 }}
               zoom={13}
               disableDefaultUI={true}
