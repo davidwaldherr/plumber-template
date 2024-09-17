@@ -103,7 +103,7 @@ export default function Homepage() {
                     <Star key={i} className="text-primary mr-2" size={32} fill={i < review.rating ? "currentColor" : "none"} />
                   ))}
                 </div>
-                <p className="mb-2">"{review.text}"</p>
+                <p className="mb-2">&quot;{review.text}&quot;</p> {/* Edited this line */}
                 <p className="font-semibold text-2xl">- {review.name}</p>
               </div>
             ))}

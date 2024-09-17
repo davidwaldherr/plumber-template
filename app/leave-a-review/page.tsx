@@ -50,7 +50,7 @@ export default function ReviewPage() {
             <h2 className="text-3xl font-bold mb-4">Thank You for Your Feedback!</h2>
             <p className="text-xl text-default-500">
               We greatly appreciate your input and will use it to improve our services.
-              Your opinion matters to us, and we"re committed to providing the best plumbing experience possible.
+              Your opinion matters to us, and we are committed to providing the best plumbing experience possible.
             </p>
             <Button
               color="primary"
@@ -113,7 +113,7 @@ export default function ReviewPage() {
           ) : (
             <form onSubmit={handleFeedbackSubmit} className="space-y-8">
               <div>
-                <h1 className="text-3xl font-semibold mb-3">We"d Love to Hear More!</h1>
+                <h1 className="text-3xl font-semibold mb-3">We Would Love to Hear More!</h1>
                 <p className="text-lg text-default-500 mb-6">
                   Your feedback is incredibly valuable to us. Please let us know how we can improve our service!
                 </p>
