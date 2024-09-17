@@ -1,11 +1,35 @@
-import React from 'react'
+"use client"
+
+import React, { useState, useEffect } from 'react'
 import { Card, CardBody, CardHeader, Link } from "@nextui-org/react"
 import { Star } from 'lucide-react'
 
 export function GoogleReviewsCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const checkIfOpen = () => {
+      const now = new Date();
+      const cstTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+      const day = cstTime.getDay();
+      const hour = cstTime.getHours();
+
+      // Weekdays are 1 (Monday) through 5 (Friday), and business hours are 9 to 17 (5pm)
+      const open = day >= 1 && day <= 5 && hour >= 9 && hour < 17;
+      setIsOpen(open);
+    };
+
+    // Check immediately and then set an interval to check every minute
+    checkIfOpen();
+    const intervalId = setInterval(checkIfOpen, 60000);
+
+    // Clear the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="fixed bottom-4 left-4 z-50 hidden md:block hover:scale-105 transition-transform">
-      <Card className="w-64 bg-white shadow-lg border-4 border-[rgb(var(--color-3))] rounded-lg">
+      <Card className="w-64 bg-white shadow-lg border-4 border-[rgb(var(--color-3))] rounded-lg pt-4">
         <CardHeader className="flex gap-3">
           <svg viewBox="0 0 24 24" width="48" height="48">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -30,6 +54,11 @@ export function GoogleReviewsCard() {
           </Link>
         </CardBody>
       </Card>
+      <div className={`absolute top-0 left-0 transform transition-transform`}>
+        <div className={`px-4 py-2 rounded-bl-lg ${isOpen ? 'bg-green-500' : 'bg-red-500'}`}>
+          {isOpen ? 'CURRENTLY OPEN' : 'CURRENTLY CLOSED'}
+        </div>
+      </div>
     </div>
   )
 }

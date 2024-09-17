@@ -33,10 +33,8 @@ export function Navbar() {
 
   useEffect(() => {
     window.addEventListener('scroll', closeDropdowns)
-    window.addEventListener('click', closeDropdowns)
     return () => {
       window.removeEventListener('scroll', closeDropdowns)
-      window.removeEventListener('click', closeDropdowns)
     }
   }, [])
 
@@ -103,8 +101,8 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:scale-105 focus:outline-none"
+              onClick={() => setIsMenuOpen(prevIsMenuOpen => !prevIsMenuOpen)}
+              className="menu-button inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary hover:scale-105 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <Menu className="block h-6 w-6" aria-hidden="true" />
