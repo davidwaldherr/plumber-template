@@ -29,6 +29,10 @@ body {
   background: rgb(var(--background));
 }
 
+.bg-white .text-center {
+  color: rgb(var(--background));
+}
+
 body input,
 body textarea {
   color: rgb(var(--background));
@@ -98,4 +102,10 @@ button:hover, .button:hover {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+/* Add the following CSS rule for placeholder text color */
+::placeholder {
+  color: white;
+  opacity: 1; /* Override any browser default opacity */
 }
