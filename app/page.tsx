@@ -1,11 +1,11 @@
-'use client'
+"use client"
 
-import React from 'react'
+import React from "react"
 import Image from "next/image"
-import { Wrench, Phone, Star, Clock } from 'lucide-react'
+import { Wrench, Phone, Star, Clock } from "lucide-react"
 import heroImage from "../public/images/plumbing-hero.svg"
-import { APIProvider, Map, AdvancedMarker, Pin, useMap } from '@vis.gl/react-google-maps'
-import { useState, useEffect } from 'react'
+import { APIProvider, Map, AdvancedMarker, Pin, useMap } from "@vis.gl/react-google-maps"
+import { useState, useEffect } from "react"
 
 function MapContent({ onLoad }: { onLoad: (map: google.maps.Map) => void }) {
   const map = useMap()
@@ -22,9 +22,9 @@ function MapContent({ onLoad }: { onLoad: (map: google.maps.Map) => void }) {
     >
       <Pin 
         scale={3}
-        background={'rgb(var(--color-4))'}
-        borderColor={'rgb(var(--color-1))'}
-        glyphColor={'rgb(var(--color-1))'}
+        background={"rgb(var(--color-4))"}
+        borderColor={"rgb(var(--color-1))"}
+        glyphColor={"rgb(var(--color-1))"}
       />
     </AdvancedMarker>
   )
@@ -38,7 +38,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontSize: '1.25em' }}>
+    <div className="min-h-screen bg-background text-foreground" style={{ fontSize: "1.25em" }}>
       {/* Hero Section */}
       <main className="grid md:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 ml-12 md:pb-24 px-20 md:px-18 bg-primary text-primary-foreground">
         <div className="py-6 md:order-1 hidden md:block">
@@ -75,7 +75,7 @@ export default function Homepage() {
         <div className="container mx-auto px-4">
           <h2 className="text-7xl font-bold text-center mb-10 text-foreground">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {['Repair', 'Installation', 'Maintenance'].map((service) => (
+            {["Repair", "Installation", "Maintenance"].map((service) => (
               <div key={service} className="bg-secondary text-secondary-foreground shadow-md rounded-lg">
                 <div className="p-6 text-center">
                   <Wrench className="mx-auto mb-4" size={48} />
@@ -94,8 +94,8 @@ export default function Homepage() {
           <h2 className="text-4xl font-bold text-center mb-10">Customer Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'John D.', text: 'Excellent service! Fixed our leak quickly and efficiently.', rating: 5 },
-              { name: 'Sarah M.', text: 'Very professional and knowledgeable. Highly recommend!', rating: 5 },
+              { name: "John D.", text: "Excellent service! Fixed our leak quickly and efficiently.", rating: 5 },
+              { name: "Sarah M.", text: "Very professional and knowledgeable. Highly recommend!", rating: 5 },
             ].map((review, index) => (
               <div key={index} className="bg-background text-foreground shadow-md rounded-lg p-6">
                 <div className="flex items-center mb-4">
