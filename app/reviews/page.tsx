@@ -92,10 +92,10 @@ export default function ReviewsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-color-1 text-color-5 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold text-center mb-8 text-foreground">Customer Reviews</h1>
-        <p className="text-2xl text-center text-muted-foreground mb-12">
+        <h1 className="text-6xl font-bold text-center mb-8 text-color-5">Customer Reviews</h1>
+        <p className="text-2xl text-center text-color-5 mb-12">
           See what our customers are saying about our plumbing services
         </p>
         <div className="grid grid-cols-12 gap-6 mb-8">

@@ -33,10 +33,10 @@ export function Footer() {
           <div className="col-span-1">
             <div className="flex flex-col items-start">
               <h4 className="text-3xl font-semibold text-foreground mb-6">Quick Links</h4>
-              <Link href="#" className="text-xl text-foreground hover:text-accent mb-4">Services</Link>
-              <Link href="#" className="text-xl text-foreground hover:text-accent mb-4">About Us</Link>
-              <Link href="#" className="text-xl text-foreground hover:text-accent mb-4">Contact</Link>
-              <Link href="#" className="text-xl text-foreground hover:text-accent mb-4">Reviews</Link>
+              <Link href="/services" className="text-xl text-foreground hover:text-accent mb-4">Services</Link>
+              <Link href="/about" className="text-xl text-foreground hover:text-accent mb-4">About Us</Link>
+              <Link href="/contact" className="text-xl text-foreground hover:text-accent mb-4">Contact</Link>
+              <Link href="/reviews" className="text-xl text-foreground hover:text-accent mb-4">Reviews</Link>
             </div>
           </div>
           

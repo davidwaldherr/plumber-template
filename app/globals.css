@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-1: 222 238 245;
-  --color-2: 157 208 204;
-  --color-3: 241 123 78;
-  --color-4: 187 66 63;
-  --color-5: 5 102 125;
+  --color-1: 249 237 48;
+  --color-2: 115 193 97;
+  --color-3: 237 84 84;
+  --color-4: 56 90 167;
+  --color-5: 63 65 97;
 
   --background: var(--color-5);
   --foreground: var(--color-1);
@@ -17,8 +17,8 @@
   --secondary-foreground: var(--color-5);
   --accent: var(--color-4);
   --accent-foreground: var(--color-1);
-  --muted: 215 16% 47%;
-  --muted-foreground: 215 20% 65%;
+  --muted: var(--color-2);
+  --muted-foreground: var(--color-5);
   --border: var(--color-2);
   --input: var(--color-2);
   --ring: var(--color-3);

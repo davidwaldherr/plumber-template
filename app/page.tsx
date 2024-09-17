@@ -18,12 +18,12 @@ function MapContent({ onLoad }: { onLoad: (map: google.maps.Map) => void }) {
 
   return (
     <AdvancedMarker 
-      position={{ lat: 43.596478, lng: -88.0883928 }}
+      position={{ lat: 43.596478, lng: -88.0883927 }}
     >
       <Pin 
         scale={3}
-        background={"rgb(var(--color-4))"}
-        borderColor={"rgb(var(--color-1))"}
+        background={"rgb(var(--color-3))"}
+        borderColor={"rgb(var(--color-5))"}
         glyphColor={"rgb(var(--color-1))"}
       />
     </AdvancedMarker>
@@ -97,7 +97,7 @@ export default function Homepage() {
       {/* Google Maps Section */}
       <section className="py-20 bg-[rgb(var(--color-1))]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-10 text-[rgb(var(--color-5))]">Find Us</h2>
+          <h2 className="text-7xl font-bold text-center mb-10 text-[rgb(var(--color-5))]">Find Us</h2>
           <div className="w-full h-[400px] border-4 border-[rgb(var(--color-3))]">
             <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
               <Map
@@ -156,15 +156,17 @@ export function ReviewsSection() {
         <h2 className="text-7xl font-bold text-center mb-10">Customer Reviews</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <div key={index} className="group bg-[rgb(var(--color-1))] text-[rgb(var(--color-5))] shadow-md rounded-lg p-6 hover:bg-[rgb(var(--color-3))] hover:text-[rgb(var(--color-1))] transition-colors hover:scale-105"> {/* Added hover:scale-105 */}
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="text-[rgb(var(--color-5))] mr-2 group-hover:text-[rgb(var(--color-1))] transition-colors" size={32} fill={i < review.rating ? "currentColor" : "none"} />
-                ))}
+            <a key={index} href="/reviews" className="group">
+              <div className="bg-[rgb(var(--color-1))] text-[rgb(var(--color-5))] shadow-md rounded-lg p-6 hover:bg-[rgb(var(--color-3))] hover:text-[rgb(var(--color-1))] transition-colors hover:scale-105 h-[250px] flex flex-col justify-between">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="text-[rgb(var(--color-5))] mr-2 group-hover:text-[rgb(var(--color-1))] transition-colors" size={32} fill={i < review.rating ? "currentColor" : "none"} />
+                  ))}
+                </div>
+                <p className="mb-2">&quot;{review.text}&quot;</p>
+                <p className="font-semibold text-2xl">- {review.name}</p>
               </div>
-              <p className="mb-2">&quot;{review.text}&quot;</p>
-              <p className="font-semibold text-2xl">- {review.name}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
