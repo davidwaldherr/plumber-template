@@ -74,8 +74,8 @@ export default function GoogleMapsSection() {
             <Phone size={24} /> {/* Icon added */}
             Call Us
           </button>
-          <button className="bg-[rgb(var(--color-5))] text-white py-6 px-12 text-2xl rounded-lg shadow-xl flex items-center justify-center gap-2">
-            <Send size={24} /> {/* Icon added */}
+          <button className="bg-[rgb(var(--color-3))] text-white py-6 px-12 text-2xl rounded-lg shadow-xl flex items-center justify-center gap-2">
+            <Send size={24} />
             Schedule Online
           </button>
         </div>

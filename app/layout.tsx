@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, { useState } from 'react';
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
 
@@ -13,8 +15,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [theme, setTheme] = useState('theme-light');
+
+  const toggleTheme = (newTheme: string) => {
+    setTheme(newTheme);
+  };
+
   return (
-    <html lang="en">
+    <html lang="en" className={theme}>
       <head>
         <title>Plumber Pipeline</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -39,6 +47,32 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
+          <div className="theme-toggle">
+            <button 
+              className="px-4 py-2 m-2 bg-gray-200 rounded hover:bg-gray-300"
+              onClick={() => toggleTheme('theme-light')}
+            >
+              GreyBlue-Beige
+            </button>
+            <button 
+              className="px-4 py-2 m-2 bg-gray-200 rounded hover:bg-gray-300"
+              onClick={() => toggleTheme('theme-dark')}
+            >
+              Dark
+            </button>
+            <button 
+              className="px-4 py-2 m-2 bg-gray-200 rounded hover:bg-gray-300"
+              onClick={() => toggleTheme('theme-blue')}
+            >
+              Blue-Red
+            </button>
+            <button 
+              className="px-4 py-2 m-2 bg-gray-200 rounded hover:bg-gray-300"
+              onClick={() => toggleTheme('theme-green')}
+            >
+              Turquoise
+            </button>
+          </div>
           {children}
           <GoogleReviewsCard />
         </main>

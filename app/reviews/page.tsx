@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Card, CardBody, CardHeader, Avatar } from "@nextui-org/react"
+import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import { Star } from 'lucide-react'
 
 const allReviews = Array(50).fill(null).map((_, index) => ({
@@ -10,7 +10,7 @@ const allReviews = Array(50).fill(null).map((_, index) => ({
   rating: 5,
   date: new Date(Date.now() - Math.random() * 10000000000).toISOString().split('T')[0],
   review: `This is review number ${index + 1}. The plumbing service was ${['excellent', 'great', 'very good'][Math.floor(Math.random() * 3)]}. ${['Would highly recommend!', 'Will use again.', 'Very satisfied.'][Math.floor(Math.random() * 3)]}`,
-  avatar: `/placeholder.svg?height=40&width=40`
+  avatar: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><rect width="100%" height="100%" fill="rgb(var(--color-5))" /></svg>`
 }))
 
 interface Review {
@@ -23,9 +23,12 @@ interface Review {
 }
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <Card className="w-full h-full shadow-md hover:shadow-xl transition-shadow duration-300 bg-color-1 text-secondary-foreground hover:bg-color-3 hover:text-color-1">
+  <Card className="w-full h-full shadow-md hover:shadow-xl transition-shadow duration-300 bg-[rgb(var(--color-1))] text-[rgb(var(--color-5))] hover:bg-color-3 hover:text-color-1">
     <CardHeader className="flex gap-3">
-      <Avatar src={review.avatar} size="md" />
+      <div className="relative w-10 h-10">
+        <div className="absolute inset-0 rounded-full bg-[rgb(var(--color-5))]"></div>
+        <div className="absolute inset-1 rounded-full bg-[rgb(var(--color-1))]"></div>
+      </div>
       <div className="flex flex-col">
         <p className="text-2xl font-semibold">{review.name}</p>
       </div>

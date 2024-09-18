@@ -92,10 +92,10 @@ export function Navbar() {
             <Link href="/about" className={`px-3 py-2 rounded-md text-xl font-medium ${isActive('/about') ? 'text-color-3' : 'text-foreground hover:text-color-3 hover:border hover:border-color-3 hover:scale-105'}`}>
               About Us
             </Link>
-            <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-xl font-medium flex items-center hover:bg-secondary hover:text-secondary-foreground hover:border hover:border-primary hover:scale-105">
-              <Phone size={32} className="mr-2" />
+            <Link href="tel:5551234567" className="bg-primary text-[rgb(var(--color-1))] px-4 py-2 rounded-md text-2xl font-medium flex items-center hover:bg-secondary hover:text-secondary-foreground outline-color-1 outline-3 outline hover:scale-105">
+              <Phone size={32} className="mr-2 text-color-1" />
               (555) 123-4567
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

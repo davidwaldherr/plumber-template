@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-1: 249 237 48;
-  --color-2: 115 193 97;
-  --color-3: 237 84 84;
-  --color-4: 56 90 167;
-  --color-5: 63 65 97;
+  --color-1: 224 190 218;
+  --color-2: 156 177 217;
+  --color-3: 141 116 145;
+  --color-4: 104 95 110;
+  --color-5: 54 81 106;
 
   --background: var(--color-5);
   --foreground: var(--color-1);
@@ -22,6 +22,38 @@
   --border: var(--color-2);
   --input: var(--color-2);
   --ring: var(--color-3);
+}
+
+.theme-light {
+  --color-1: 255 227 176;
+  --color-2: 247 181 47;
+  --color-3: 135 179 74;
+  --color-4: 237 97 46;
+  --color-5: 98 122 126;
+}
+
+.theme-dark {
+  --color-1: 238 236 202;
+  --color-2: 189 186 158;
+  --color-3: 87 158 179;
+  --color-4: 202 60 40;
+  --color-5: 71 72 60;
+}
+
+.theme-blue {
+  --color-1: 146 215 232;
+  --color-2: 209 193 155;
+  --color-3: 181 144 90;
+  --color-4: 133 122 69;
+  --color-5: 143 27 53;
+}
+
+.theme-green {
+  --color-1: 234 233 185;
+  --color-2: 69 151 156;
+  --color-3: 152 67 34;
+  --color-4: 38 100 108;
+  --color-5: 28 67 72;
 }
 
 body {
@@ -122,4 +154,24 @@ div.bg-color-5 {
 
 .no-outline:focus {
   outline: none;
+}
+
+.theme-toggle {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.theme-toggle button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-3);
+  color: var(--color-1);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background-color: var(--color-4);
 }
